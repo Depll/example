@@ -490,4 +490,418 @@ const newObj = {...q};
 
 //====================================================================
 
+// let str = "some";
+let strObj = new String(str);
 
+// console.log(typeof(str));
+// console.log(typeof(strObj));
+
+console.dir([1, 2, 3]);
+
+const solider = {
+    health: 400,
+    armor: 100,
+    sayHello: function () {
+        console.log("Hello");
+    },
+};
+
+
+const john = Object.create(solider);
+
+
+// const john = {
+//     health: 100,
+// };
+
+
+Object.setPrototypeOf(john, solider);
+
+
+// console.log(john.armor);
+john.sayHello();
+
+//===================================================
+// const PersonalMovieDB = {
+//   count: 0,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false,
+//   start: () => {
+//       personalMovieDB.count = +prompt("Сколько фильмов вы уже посмотрели?", "");
+
+//       while (personalMovieDB.count == "" || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+//           personalMovieDB.count = +prompt("Сколько фильмов вы уже посмотрели?", "");
+//       }
+//   },
+//   rememberMyFilms: function () {
+//       for (let i = 0; i < 2; i++) {
+//           const a = prompt("один из последних просмотренных фильмов?", ""),
+//               b = prompt("На сколько вы его оцените?", "");
+
+//           if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+//               PersonalMovieDB.movies[a] = b;
+//               console.log("done");
+//           } else {
+//               console.log("error");
+//               i--;
+//           }
+//       }
+//   },
+//   detectPersonalLevel: function () {
+//       if (personalMovieDB.count < 10) {
+//           console.log("Просмотрено довольно мало фильмов");
+//       } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//           console.log("Вы классический зритель");
+//       } else if (personalMovieDB.count >= 30) {
+//           console.log("Вы киноман");
+//       } else {
+//           console.log("Произошла ошибка");
+//       }
+//   },
+//   showMyDb: function (hidden) {
+//       if (!hidden) {
+//           console.log(PersonalMovieDB);
+//       }
+//   },
+//   toggleVisibleMyDb: function () {
+//       if (PersonalMovieDB.privat) {
+//           PersonalMovieDB.privat = false;
+//       } else {
+//           PersonalMovieDB.privat = true;
+//       }
+//   },
+//   writeYourGenres: function () {
+//       for (let i = 1; i < 2; i++) {
+          //     let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+
+          //   if (genre === '' || genre === null) {
+          //       console.log('Вы ввели некорректные данные');
+          //       i--;
+          //   } else {
+          //     PersonalMovieDB.genres[i - 1] = genre;
+          //   }
+
+//           let genres = prompt(`Введите ваши любимые жанры через запятую`).toLowerCase();
+//           if (genres === '' || genres === null) {
+//               console.log('Вы ввели некорректные данные');
+//               i--;
+//           } else {
+//               PersonalMovieDB.genres[i - 1] = genres.split(', ');
+//               PersonalMovieDB.genres.sort();
+//           }
+
+//       }
+
+//       PersonalMovieDB.genres.forEach((item, i) => {
+//           console.log(`Любтимый жанр ${i + 1} - это ${item}`);
+//       });
+//   }
+// };
+//======================================
+
+console.log(typeof String(null));
+console.log(typeof String(4));
+
+// 2
+
+console.log(typeof (4 + ""));
+
+// const num = 5;
+
+console.log("https://vk.com/catalog/" + num);
+
+const fontSize = 26 + "px";
+
+// to number
+// 1
+
+console.log(typeof Number("hiii"));
+// 2
+
+console.log(typeof + "5");
+
+// 3
+
+console.log(typeof parseInt("15px", 10));
+
+let answ = +prompt("Hello", "");
+
+// to boolean
+
+// 0, '', null, undefined, NaN;
+
+let switcher = null;
+
+if (switcher) {
+    console.log("Working...");
+}
+
+switcher = 1;
+
+if (switcher) {
+    console.log("Working...");
+}
+
+// 2
+
+console.log(typeof(Boolean('4')));
+
+// 3
+
+console.log(typeof(!!"44444"));
+
+
+
+
+//=======================================================================
+
+const box = document.getElementById('box');
+
+console.log(box);
+
+const btns = document.getElementsByTagName('button');
+
+console.log(btns[0]);
+
+const circles = document.getElementsByClassName('circle');
+console.log(circles);
+
+const hearts = document.querySelectorAll('.heart'); //#heart
+
+hearts.forEach(item => {
+    console.log(item);
+});
+
+const oneHeart = document.querySelector('.heart');
+console.log(oneHeart);
+
+//==========================================
+// const box = document.getElementById("box"),
+//     btns = document.getElementsByTagName("button"),
+//     circles = document.getElementsByClassName("circle"),
+//     hearts = document.querySelectorAll(".heart"),
+//     oneHeart = document.querySelector(".heart"),
+//     wrapper = document.querySelector('.wrapper');
+
+box.style.backgroundColor = "blue";
+box.style.width = "500px";
+
+box.style.cssText = `background-color: blue; width : 500px`;
+
+btns[1].style.borderRadius = "41%";
+circles[0].style.backgroundColor = "rgb(0, 255, 238)";
+
+// for (let i = 0; i < hearts.length; i++) {
+//     hearts[i].style.backgroundColor = 'blue';
+// }
+
+hearts.forEach((item) => {
+    item.style.backgroundColor = "blue";
+});
+
+const div = document.createElement("div");
+// const text = document.createTextNode('Тут был я');
+
+div.classList.add("black");
+
+wrapper.append(div);
+
+// wrapper.prepend(div);
+
+// hearts[0].after(div);
+
+// circles[0].remove();
+
+// hearts[0].replaceWith(circles[0]);
+
+
+div.innerHTML = "<h1>Hello World</h1>";
+
+// div.textContent = 'Hello';
+
+div.insertAdjacentHTML('afterend', '<h2>Hello</h2>');
+
+//======================================================
+
+// const btns = document.querySelectorAll("button"),
+  overlay = document.querySelector(".overlay");
+
+// btn.addEventListener('click', () => {
+//  alert('good morning');
+// });
+
+let i = 0;
+const deleteElement = (e) => {
+  console.log(e.target);
+  console.log(e.type);
+  // i++;
+  // if (i == 1) {
+  //     btn.removeEventListener('click', deleteElement);
+  // }
+};
+
+// btn.addEventListener("click", deleteElement);
+// overlay.addEventListener("click", deleteElement);
+
+btns.forEach(btn => {
+    btn.addEventListener('mousedown', deleteElement, {once: false});
+});
+
+
+const link = document.querySelector('a');
+
+link.addEventListener('click', function (event) {
+      event.preventDefault();
+      console.log(event.target);
+});
+
+//===================
+
+console.log(document.documentElement);
+console.log(document.body.childNodes);
+console.log(document.body.firstChild);
+console.log(document.body.firstElementChild);
+console.log(document.body.lastChild); 
+console.log(document.body.lastElementChild);
+
+console.log(document.querySelector('#current').parentElement);
+
+console.log(document.querySelector('[data-current="3"]').nextElementSibling);
+
+for (let node of document.body.childNodes) {
+  if (node.nodeName == "#text") {
+      continue;
+  }
+  console.log(node);
+}
+
+//================================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const movieDB = {
+      movies: [
+          "Логан",
+          "Лига справедливости",
+          "Ла-ла лэнд",
+          "Одержимость",
+          "Скотт Пилигрим против...",
+      ],
+  };
+
+  const adv = document.querySelectorAll(".promo__adv img"),
+      poster = document.querySelector(".promo__bg"),
+      genre = poster.querySelector(".promo__genre"),
+      movieList = document.querySelector(".promo__interactive-list"),
+      advTitle = document.querySelector(".promo__adv-title"),
+      promoAdv = document.querySelector(".promo__adv"),
+      promoDescr = document.querySelector(".promo__descr"),
+      addForm = document.querySelector("form.add"),
+      addInput = addForm.querySelector(".adding__input"),
+      checkBox = addForm.querySelector('[type ="checkbox"]');
+
+  addForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      let newFilm = addInput.value;
+      const favorite = checkBox.checked;
+
+      if (newFilm) {
+          if (newFilm.length > 21) {
+              newFilm = `${newFilm.substring(0, 22)}...`;
+          }
+
+          if (favorite) {
+              console.log("Добавляем любимый фильм");
+          }
+
+          movieDB.movies.push(newFilm);
+          sortArr(movieDB.movies);
+
+          createMovieList(movieDB.movies, movieList);
+      }
+
+      event.target.reset();
+  });
+
+  const deleteAdv = (arr) => {
+      arr.forEach((item) => {
+          item.remove();
+      });
+  };
+
+  advTitle.remove();
+  promoAdv.remove();
+
+  const makeChanges = () => {
+      genre.textContent = "драма";
+
+      poster.style.backgroundImage = 'url("img/bg.jpg")';
+  };
+
+  promoDescr.innerHTML = "Человек который покакал";
+
+  const sortArr = (arr) => {
+      arr.sort();
+  };
+
+  function createMovieList(films, parent) {
+      movieList.innerHTML = "";
+      sortArr(films);
+
+      films.forEach((film, i) => {
+          parent.innerHTML += `
+  <li class="promo__interactive-item">${i + 1} ${film}
+      <div class="delete"></div>
+  </li>
+  `;
+      });
+
+      document.querySelectorAll(".delete").forEach((btn, i) => {
+          btn.addEventListener("click", () => {
+              btn.parentElement.remove();
+              movieDB.movies.splice(i, 1);
+
+              createMovieList(films, parent);
+          });
+      });
+  }
+  deleteAdv(adv);
+  makeChanges();
+  createMovieList(movieDB.movies, movieList);
+});
+
+//===========================================================
+
+// touchstart - касание
+// touchmove - движение
+// touchend - палец оторвался
+// touchenter - ведём пальцем и наскальзываем на элемент с событием
+// touchleave - за пределы элемента (скольжение)
+// touchcancel - 
+
+window.addEventListener('DOMContentLoaded', () => {
+  const box = document.querySelector('.box');
+
+  box.addEventListener('touchstart', (e) => {
+     e.preventDefault();
+     console.log('moveee');
+     console.log(e.changedTouches );
+     });
+
+
+     box.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+        console.log(e.targetTouches[0].pageX);
+        });
+   
+
+
+// touches - список всех пальцев на экране
+// targetTouches - пальцы на цели
+// changedTouches - ззадействованные пальцы 
+});
+
+
+//===================================================
