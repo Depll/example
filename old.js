@@ -905,3 +905,119 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 //===================================================
+
+const p = document.querySelectorAll('p');
+console.log(p);
+
+// defer - загружать скрипт в фоновом режиме
+
+// async - независимый
+
+function loadScript(src) {
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = false;
+    document.body.append(script); // async  если не false
+      
+}
+
+loadScript("test.js");
+loadScript("some.js");
+
+//================================================
+
+
+// const btns = document.querySelectorAll("button"),
+//     wrapper = document.querySelector(".btn-block");
+// console.log(btns[0].classList.length);
+// console.log(btns[0].classList.item(1));
+// console.log(btns[1].classList.add('red'));
+// console.log(btns[0].classList.remove('blue'));
+// console.log(btns[0].classList.toggle('blue'));
+
+// if (btns[1].classList.contains('red')) {
+//     console.log('red');
+// }
+
+btns[0].addEventListener("click", () => {
+    if (!btns[1].classList.contains("red")) {
+        btns[1].classList.add("red");
+    } else {
+        btns[1].classList.remove("red");
+    }
+
+    btns[1].classList.toggle("red");
+});
+
+// wrapper.addEventListener('click', (event) => {
+//    if (event.target && event.target.tagName == "BUTTON") {
+//        console.log('Hello');
+//    }
+// });
+
+wrapper.addEventListener("click", (event) => {
+    if (event.target && event.target.matches("button.red")) {
+        console.log("Hello");
+    }
+});
+
+// btns.forEach(btn => {
+//    btn.addEventListener('click', () => {
+//         console.log('Hello');
+//    });
+// });
+
+const btn = document.createElement("button");
+btn.classList("red");
+wrapper.append(btn);
+
+//==================================================
+
+const btn = document.querySelector(".btn");
+let timerId,
+    i = 0;
+
+function myAnimation() {
+    const elem = document.querySelector(".box");
+    let pos = 0;
+
+    const id = setInterval(frame, 10);
+    function frame() {
+        if (pos == 300) {
+            clearInterval(id);
+        } else {
+            pos++;
+            elem.style.top = pos + "px";
+            elem.style.left = pos + "px";
+        }
+    }
+}
+
+// btn.addEventListener('click', () => {
+//     timerId = setInterval(logger, 500);
+//     });
+
+btn.addEventListener('click', myAnimation);
+
+//     const timerID = setTimeout(logger, 2000);
+
+// setTimeout(logger, 2000);
+
+// const tiimerID = setTimeout(() => {
+//     console.log('Девочка в 17 ряду');
+// }, 3000);
+
+// function logger () {
+//     if (i === 3) {
+//       clearInterval(timerId);
+//     }
+//     console.log('хэй девчонка в 16 ряду');
+//     i++;
+// }
+
+// let id = setTimeout(function log() {
+//   console.log('Hey devchonka v 16 ryadu');
+//   id = setTimeout(log, 600);
+// }, 600);
+
+//===========================================================
