@@ -1,33 +1,17 @@
-"use strict";
+// JSON
 
-const now = new Date('2020-05-01');
-// new Date.parse('2020-05-01');
-
-
-console.log(now.setHours(40));
-console.log(now);
-
-
-// console.log(now.getFullYear());
-// console.log(now.getMonth());
-// console.log(now.getDate());
-// console.log(now.getHours());
-// console.log(now.getMinutes());
-// console.log(now.getSeconds());
-// console.log(now.getDay());
-// console.log(now.getUTCHours());
+const persone  = {
+         name: "Alex",
+         tel:  "+744444444",
+         parents: {
+                mom: "Olga",
+                dad: "Mike"
+         }
+};
 
 
- console.log(now.getTimezoneOffset());
- console.log(now.getTime());
-
-
- let start = new Date();
-
- for (let i = 0; i < 100000; i++) {
-     let some = i ** 3;
- }
-
-let end = new Date();
-
-alert(`Цикл отработал за ${end-start} миллисекунд`);
+// console.log(JSON.parse(JSON.stringify(persone)));
+const clone = JSON.parse(JSON.stringify(persone));
+clone.parents.mom = "Ann";
+console.log(persone);
+console.log(clone);
